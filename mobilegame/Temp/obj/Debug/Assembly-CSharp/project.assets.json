@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/v1ctor/workspace/unity/teste/mobilegame/Assembly-CSharp.csproj",
+      "projectUniqueName": "/home/v1ctor/workspace/unity/racing/racing/mobilegame/Assembly-CSharp.csproj",
       "projectName": "Assembly-CSharp",
-      "projectPath": "/home/v1ctor/workspace/unity/teste/mobilegame/Assembly-CSharp.csproj",
+      "projectPath": "/home/v1ctor/workspace/unity/racing/racing/mobilegame/Assembly-CSharp.csproj",
       "packagesPath": "/home/v1ctor/.nuget/packages/",
-      "outputPath": "/home/v1ctor/workspace/unity/teste/mobilegame/Temp/obj/Debug/Assembly-CSharp/",
+      "outputPath": "/home/v1ctor/workspace/unity/racing/racing/mobilegame/Temp/obj/Debug/Assembly-CSharp/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/v1ctor/.nuget/NuGet/NuGet.Config"

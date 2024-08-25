@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OzkOFvDTSA+AsnmbLRn0bWA7kS7aPxr1NmrNFz2BBPQUuz7DegFNd5ytYcl2f8w7NgeMErBSvN62RSP/OIvU+Q==",
+  "dgSpecHash": "yebvAYahSp6wO4hbwUifHjTFBfIX8kfEXiC2UYJVVrpagEPS3Pa6PsZ0OCoUqxQS67zp5yCqIWpd4GBovxuuEQ==",
   "success": true,
-  "projectFilePath": "/home/v1ctor/workspace/unity/teste/mobilegame/Assembly-CSharp-Editor.csproj",
+  "projectFilePath": "/home/v1ctor/workspace/unity/racing/racing/mobilegame/Assembly-CSharp-Editor.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

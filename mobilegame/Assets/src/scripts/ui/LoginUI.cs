@@ -19,24 +19,17 @@ public class LoginUI : MonoBehaviour
     private String login;
     private String password;
 
-    public void Start()
-    {
-        // scene = SceneManager.GetActiveScene();
-        // canvas = scene.GetRootGameObjects();
-    }
-
     public void handleSubmitButton()
     {
 
+        login = canvasLogin.transform.GetChild(0).GetChild(2).GetComponent<TextMeshProUGUI>().text;
+        password = canvasPassword.transform.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().text;
 
+        
 
-        String login = canvasLogin.transform.GetChild(0).GetChild(2).GetComponent<TextMeshProUGUI>().text;
-        String senha = canvasPassword.transform.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().text;
-        UnityEngine.Debug.Log(login);
-        UnityEngine.Debug.Log(senha);
+        // StartCoroutine(GetDataFromAPI("https://localhost:8080/players"));
 
-
-        // if (login == "" || senha == "")
+        // if (login == "" || password == "")
         // {
         //     return;
         // }

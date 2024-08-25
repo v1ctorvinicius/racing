@@ -32,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/v1ctor/workspace/unity/teste/mobilegame/Assembly-CSharp-Editor.csproj",
+      "projectUniqueName": "/home/v1ctor/workspace/unity/racing/racing/mobilegame/Assembly-CSharp-Editor.csproj",
       "projectName": "Assembly-CSharp-Editor",
-      "projectPath": "/home/v1ctor/workspace/unity/teste/mobilegame/Assembly-CSharp-Editor.csproj",
+      "projectPath": "/home/v1ctor/workspace/unity/racing/racing/mobilegame/Assembly-CSharp-Editor.csproj",
       "packagesPath": "/home/v1ctor/.nuget/packages/",
-      "outputPath": "/home/v1ctor/workspace/unity/teste/mobilegame/Temp/obj/Debug/Assembly-CSharp-Editor/",
+      "outputPath": "/home/v1ctor/workspace/unity/racing/racing/mobilegame/Temp/obj/Debug/Assembly-CSharp-Editor/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/v1ctor/.nuget/NuGet/NuGet.Config"
@@ -51,8 +51,8 @@
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
           "projectReferences": {
-            "/home/v1ctor/workspace/unity/teste/mobilegame/Assembly-CSharp.csproj": {
-              "projectPath": "/home/v1ctor/workspace/unity/teste/mobilegame/Assembly-CSharp.csproj"
+            "/home/v1ctor/workspace/unity/racing/racing/mobilegame/Assembly-CSharp.csproj": {
+              "projectPath": "/home/v1ctor/workspace/unity/racing/racing/mobilegame/Assembly-CSharp.csproj"
             }
           }
         }
