@@ -1,10 +1,7 @@
 using System;
 using System.Collections;
-using System.Diagnostics;
-using System.Linq;
 using System.Text.RegularExpressions;
 using TMPro;
-using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
@@ -19,6 +16,7 @@ public class LoginUI : MonoBehaviour
     public GameObject canvasNewEmail;
     public GameObject canvasNewPassword;
     public GameObject canvasNewPasswordConfirm;
+    public GameObject message;
 
     private string login;
     private string password;
@@ -32,15 +30,15 @@ public class LoginUI : MonoBehaviour
 
     public void handleSubmitButton()
     {
-        login = canvasLogin.transform.GetChild(0).GetChild(2).GetComponent<TextMeshProUGUI>().text;
-        password = canvasPassword.transform.GetChild(0).GetChild(2).GetComponent<TextMeshProUGUI>().text;
+        login = canvasLogin.GetComponent<TMP_InputField>().text;
+        password = canvasPassword.GetComponent<TMP_InputField>().text;
 
-        login = Regex.Replace(login, @"\p{C}+", "").Trim();
-        password = Regex.Replace(password, @"\p{C}+", "").Trim();
+        login = SanitizeInput(login);
+        password = SanitizeInput(password);
 
         if (login == "admin" && password == "admin")
         {
-            UnityEngine.Debug.Log("Login successful");
+            Debug.Log("Login successful");
             SceneManager.LoadScene("test_track");
         }
     }
@@ -52,22 +50,22 @@ public class LoginUI : MonoBehaviour
         newPasswordConfirm = canvasNewPasswordConfirm.transform.GetChild(0).GetChild(2).GetComponent<TextMeshProUGUI>().text;
         newEmail = canvasNewEmail.transform.GetChild(0).GetChild(2).GetComponent<TextMeshProUGUI>().text;
 
-        bool isPasswordValid = Regex.Replace(newPassword, @"\p{C}+", "").Trim() == Regex.Replace(newPasswordConfirm, @"\p{C}+", "").Trim();
+        bool isPasswordValid = SanitizeInput(newPassword) == SanitizeInput(newPasswordConfirm);
         bool isEmailValid = Regex.IsMatch(newEmail, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
 
         if (!isPasswordValid)
         {
-            UnityEngine.Debug.Log("Passwords do not match");
+            Debug.Log("Passwords do not match");
             return;
         }
 
         if (!isEmailValid)
         {
-            UnityEngine.Debug.Log("Invalid email");
+            Debug.Log("Invalid email");
             return;
         }
 
-        StartCoroutine(signUpRequest(newUsername, newPassword, newEmail));
+        StartCoroutine(SignUpRequest(newUsername, newPassword, newEmail));
     }
 
     public void handleNewPlayerButton()
@@ -81,16 +79,22 @@ public class LoginUI : MonoBehaviour
     }
 
 
+    private string SanitizeInput(string input)
+    {
+        return Regex.Replace(input, @"\p{C}+", "").Trim();
+    }
+
     [Serializable]
-    class requestBody
+    class RequestBody
     {
         public string username;
         public string email;
         public string password;
-    };
-    private IEnumerator signUpRequest(string newUsername, string newPassword, string newEmail)
+    }
+
+    private IEnumerator SignUpRequest(string newUsername, string newPassword, string newEmail)
     {
-        requestBody requestBody = new requestBody
+        RequestBody requestBody = new RequestBody
         {
             username = newUsername,
             email = newEmail,
@@ -109,15 +113,25 @@ public class LoginUI : MonoBehaviour
 
         if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
         {
-            UnityEngine.Debug.LogError("Erro na requisição: " + request.error);
+            Debug.LogError("Erro na requisição: " + request.error);
         }
         else
         {
-            UnityEngine.Debug.Log("Resposta recebida: " + request.downloadHandler.text);
+            Debug.Log("Resposta recebida: " + request.downloadHandler.text);
+            if (request.responseCode == 201)
+            {
+                message.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Player created";
+                ClearInputFields();
+                message.SetActive(true);
+            }
         }
     }
 
-
+    private void ClearInputFields()
+    {
+        canvasNewUsername.GetComponent<TMP_InputField>().text = "";
+        canvasNewEmail.GetComponent<TMP_InputField>().text = "";
+        canvasNewPassword.GetComponent<TMP_InputField>().text = "";
+        canvasNewPasswordConfirm.GetComponent<TMP_InputField>().text = "";
+    }
 }
-
-
