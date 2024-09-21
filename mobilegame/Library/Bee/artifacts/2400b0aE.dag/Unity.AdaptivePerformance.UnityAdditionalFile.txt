@@ -1,1 +1,1 @@
-/home/v1ctor/workspace/unity/racing/racing/mobilegame
+/home/v1ctor/workspace/racing/mobilegame
