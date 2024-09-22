@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638625498870000000
-    m_Hash: 2703638053
+      ticks: 638626156360000000
+    m_Hash: 1786092729
   m_LockFileStatus:
     m_FilePath: /home/v1ctor/workspace/racing/mobilegame/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638625499320000000
-    m_Hash: 4277681343
+      ticks: 638626156400000000
+    m_Hash: 1683046985
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -22,12 +22,12 @@ m_LocalPackages:
 m_ProjectPath: /home/v1ctor/workspace/racing/mobilegame/Packages
 m_EditorVersion: 2022.3.47f1 (88c277b85d21)
 m_ResolvedPackages:
-- packageId: com.unity.cinemachine@2.10.0
+- packageId: com.unity.cinemachine@2.10.1
   testable: 0
   isDirectDependency: 1
-  version: 2.10.0
+  version: 2.10.1
   source: 1
-  resolvedPath: /home/v1ctor/workspace/racing/mobilegame/Library/PackageCache/com.unity.cinemachine@2.10.0
+  resolvedPath: /home/v1ctor/workspace/racing/mobilegame/Library/PackageCache/com.unity.cinemachine@2.10.1
   assetPath: Packages/com.unity.cinemachine
   name: com.unity.cinemachine
   displayName: Cinemachine
@@ -182,13 +182,13 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638451680320000000
+  datePublishedTicks: 638551642370000000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.cinemachine@2.10/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.com/Unity-Technologies/com.unity.cinemachine.git
-    revision: 3b55bae0f41b1048cc2080391ac3d4eb1c22b7ef
+    revision: 99f33a2a49de6506040887bf2cadade68d040e47
     path: 
   unityLifecycle:
     version: 2.10.1
@@ -199,12 +199,12 @@ m_ResolvedPackages:
   isDeprecated: 0
   deprecationMessage: 
   fingerprint: 
-- packageId: com.unity.collab-proxy@2.3.1
+- packageId: com.unity.collab-proxy@2.5.1
   testable: 0
   isDirectDependency: 1
-  version: 2.3.1
+  version: 2.5.1
   source: 1
-  resolvedPath: /home/v1ctor/workspace/racing/mobilegame/Library/PackageCache/com.unity.collab-proxy@2.3.1
+  resolvedPath: /home/v1ctor/workspace/racing/mobilegame/Library/PackageCache/com.unity.collab-proxy@2.5.1
   assetPath: Packages/com.unity.collab-proxy
   name: com.unity.collab-proxy
   displayName: Version Control
@@ -213,7 +213,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: Editor
-  type: assets
+  type: 
   description: The package gives you the ability to use Unity Version Control in
     the Unity editor. To use Unity Version Control, a subscription is required. Learn
     more about how you can get started for free by visiting https://unity.com/solutions/version-control
@@ -326,13 +326,13 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638448201880000000
-  documentationUrl: https://docs.unity3d.com/Packages/com.unity.collab-proxy@2.3/manual/index.html
+  datePublishedTicks: 638612183804560000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.collab-proxy@2.5/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.cloud.collaborate.git
-    revision: 613362ccb4468f55ee42e0a35809fb9a61f3f8f1
+    revision: 470a7a1321fe499cf5055d6b1d64da3a08c8dcbc
     path: 
   unityLifecycle:
     version: 2.5.1
@@ -421,12 +421,12 @@ m_ResolvedPackages:
   isDeprecated: 0
   deprecationMessage: 
   fingerprint: 
-- packageId: com.unity.ide.rider@3.0.28
+- packageId: com.unity.ide.rider@3.0.31
   testable: 0
   isDirectDependency: 1
-  version: 3.0.28
+  version: 3.0.31
   source: 1
-  resolvedPath: /home/v1ctor/workspace/racing/mobilegame/Library/PackageCache/com.unity.ide.rider@3.0.28
+  resolvedPath: /home/v1ctor/workspace/racing/mobilegame/Library/PackageCache/com.unity.ide.rider@3.0.31
   assetPath: Packages/com.unity.ide.rider
   name: com.unity.ide.rider
   displayName: JetBrains Rider Editor
@@ -507,13 +507,13 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638447139880000000
+  datePublishedTicks: 638548308080000000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.ide.rider@3.0/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.rider.git
-    revision: f4880c72477e9bbd7321c0dbda4428fa10d916df
+    revision: ccd778a2275ff09f1a83bc924cfb2fb4d5b63566
     path: 
   unityLifecycle:
     version: 3.0.31
@@ -823,12 +823,12 @@ m_ResolvedPackages:
   isDeprecated: 0
   deprecationMessage: 
   fingerprint: 
-- packageId: com.unity.textmeshpro@3.0.6
+- packageId: com.unity.textmeshpro@3.0.7
   testable: 0
   isDirectDependency: 1
-  version: 3.0.6
+  version: 3.0.7
   source: 1
-  resolvedPath: /home/v1ctor/workspace/racing/mobilegame/Library/PackageCache/com.unity.textmeshpro@3.0.6
+  resolvedPath: /home/v1ctor/workspace/racing/mobilegame/Library/PackageCache/com.unity.textmeshpro@3.0.7
   assetPath: Packages/com.unity.textmeshpro
   name: com.unity.textmeshpro
   displayName: TextMeshPro
@@ -837,7 +837,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: Text Rendering
-  type: asset
+  type: assets
   description: 'TextMeshPro is the ultimate text solution for Unity. It''s the perfect
     replacement for Unity''s UI Text and the legacy Text Mesh.
 
@@ -1001,13 +1001,13 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637547111200000000
-  documentationUrl: 
+  datePublishedTicks: 638410382150000000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.textmeshpro@3.0/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.textmeshpro.git
-    revision: 01e57e3b7de18af9dfe9baaa0a0ff5cc4765c899
+    revision: 5c364f204e10eaec84fcbff640ad4d833774c1ed
     path: 
   unityLifecycle:
     version: 3.0.7

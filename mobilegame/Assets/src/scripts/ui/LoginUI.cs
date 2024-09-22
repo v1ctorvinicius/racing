@@ -68,7 +68,7 @@ public class LoginUI : MonoBehaviour
         StartCoroutine(SignUpRequest(newUsername, newPassword, newEmail));
     }
 
-    public void handleNewPlayerButton()
+    public void handleSignUpButton()
     {
         cameraAnimator.SetBool("signup", true);
     }
