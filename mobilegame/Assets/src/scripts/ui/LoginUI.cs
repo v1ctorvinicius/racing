@@ -114,16 +114,16 @@ public class LoginUI : MonoBehaviour
         if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
         {
             Debug.LogError("Erro na requisição: " + request.error);
-        }
-        else
+            yield break;
+        }   
+
+        Debug.Log("Resposta recebida: " + request.downloadHandler.text);
+
+        if (request.responseCode == 201)
         {
-            Debug.Log("Resposta recebida: " + request.downloadHandler.text);
-            if (request.responseCode == 201)
-            {
-                message.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Player created";
-                ClearInputFields();
-                message.SetActive(true);
-            }
+            message.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Player created";
+            ClearInputFields();
+            message.SetActive(true);
         }
     }
 

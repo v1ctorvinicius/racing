@@ -3436,8 +3436,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4280996136
+  m_fontColor: {r: 0.15873085, g: 0.8207547, b: 0.16404244, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4056,6 +4056,7 @@ Terrain:
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
+  m_HeightmapMinimumLODSimplification: 0
   m_HeightmapMaximumLOD: 0
   m_ShadowCastingMode: 2
   m_DrawHeightmap: 1
@@ -4240,7 +4241,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1637403339}
         m_TargetAssemblyTypeName: LoginUI, Assembly-CSharp
-        m_MethodName: handleNewPlayerButton
+        m_MethodName: handleSignUpButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
