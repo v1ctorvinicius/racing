@@ -31,6 +31,7 @@
   /[Mm]emoryCaptures/
   /[Rr]ecordings/
   .vs/
+  .vscode/
   .gradle/
   ExportedObj/
   .consulo/

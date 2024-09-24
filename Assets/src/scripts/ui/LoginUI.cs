@@ -113,8 +113,8 @@ public class LoginUI : MonoBehaviour
 
         if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
         {
-            message.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = Color.red;        
-            message.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = request.downloadHandler.text;
+            message.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = Color.red;
+            message.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = request.error;
             Debug.LogError("Erro na requisição: " + request.error);
             yield break;
         }
