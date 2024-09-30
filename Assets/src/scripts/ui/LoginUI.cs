@@ -3,6 +3,7 @@ using System.Collections;
 using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Animations;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 
@@ -36,12 +37,10 @@ public class LoginUI : MonoBehaviour
         login = SanitizeInput(login);
         password = SanitizeInput(password);
 
-        if (login == "admin" && password == "admin")
-        {
-            Debug.Log("Login successful");
-            SceneManager.LoadScene("test_track");
-        }
+        StartCoroutine(LoginRequest(login, password));
     }
+
+
 
     public void handleSignUpSubmitButton()
     {
@@ -85,16 +84,61 @@ public class LoginUI : MonoBehaviour
     }
 
     [Serializable]
-    class RequestBody
+    class SignUpRequestBody
     {
         public string newUsername;
         public string newEmail;
         public string newPassword;
     }
+    [Serializable]
+    class LoginRequestBody
+    {
+        public string email;
+        public string password;
+    }
+
+    private IEnumerator LoginRequest(string email, string password)
+    {
+        LoginRequestBody requestBody = new LoginRequestBody
+        {
+            email = email,
+            password = password
+        };
+
+        string jsonData = JsonUtility.ToJson(requestBody);
+
+        UnityWebRequest request = new UnityWebRequest(apiUrl + "/login", "POST");
+        byte[] bodyRaw = new System.Text.UTF8Encoding().GetBytes(jsonData);
+        request.uploadHandler = new UploadHandlerRaw(bodyRaw);
+        request.downloadHandler = new DownloadHandlerBuffer();
+        request.SetRequestHeader("Content-Type", "application/json");
+
+        yield return request.SendWebRequest();
+        Debug.Log("Resposta recebida: " + request.downloadHandler.text);
+
+        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
+        {
+            Debug.LogError("Erro na requisição: " + request.error);
+            yield break;
+        }
+
+        if (request.responseCode == 200)
+        {
+            cameraAnimator.SetBool("authorized", true);
+            Debug.Log("animation: " + cameraAnimator.runtimeAnimatorController.animationClips[0].name + " / duration" + cameraAnimator.runtimeAnimatorController.animationClips[0].length);
+            Debug.Log("animation: " + cameraAnimator.runtimeAnimatorController.animationClips[1].name + " / duration" + cameraAnimator.runtimeAnimatorController.animationClips[1].length);
+            Debug.Log("animation: " + cameraAnimator.runtimeAnimatorController.animationClips[2].name + " / duration" + cameraAnimator.runtimeAnimatorController.animationClips[2].length);
+            yield return WaitForAnimationToEnd(3f);
+
+            SceneManager.LoadScene("test_track");
+        }
+
+
+    }
 
     private IEnumerator SignUpRequest(string username, string password, string email)
     {
-        RequestBody requestBody = new RequestBody
+        SignUpRequestBody requestBody = new SignUpRequestBody
         {
             newUsername = username,
             newEmail = email,
@@ -137,4 +181,11 @@ public class LoginUI : MonoBehaviour
         canvasNewPassword.GetComponent<TMP_InputField>().text = "";
         canvasNewPasswordConfirm.GetComponent<TMP_InputField>().text = "";
     }
+
+    private IEnumerator WaitForAnimationToEnd(float time)
+    {
+        yield return new WaitForSeconds(time);
+    }
+
 }
+
